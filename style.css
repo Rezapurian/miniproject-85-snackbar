@@ -36,14 +36,15 @@ body {
 }
 .toast {
     width: 400px;
-    height: 80px;
+    height: 150px;
     background: #fff;
     color: #000;
     font-weight: 500;
     margin: 15px 0;
+    padding-top: 20px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-    display: flex;
-    align-items: center;
+    display: block;
+    align-items: start;
     position: relative;
     transform: translateX(100%);
     animation: moveleft 0.5s linear forwards;
@@ -84,4 +85,15 @@ body {
 }
 .toast.Invalid::after {
     background: #ffa500;
+}
+.toast .closebtn {
+    width: 80%;
+    height: 40px;
+    border: none;
+    outline: none;
+    margin: 30px 40px;
+    background: #edecec;
+    border-radius: 12px;
+    font-size: 17px;
+    cursor: pointer;
 }

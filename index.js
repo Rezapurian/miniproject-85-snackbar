@@ -6,10 +6,13 @@ let invalidMsg = '<i class="fa-solid fa-circle-exclamation"></i> Invalid input, 
 
 function showToast(msg) {
     let toast = document.createElement('div');
+    let closeBtn = document.createElement('button');
     toast.classList.add('toast');
     toast.innerHTML = msg;
     toastBox.appendChild(toast);
-
+    closeBtn.classList.add('closebtn');
+    closeBtn.innerHTML = 'Close';
+    toast.appendChild(closeBtn);
     
 
     if (msg.includes('error')) {
@@ -18,6 +21,10 @@ function showToast(msg) {
     if (msg.includes('Invalid')) {
         toast.classList.add('Invalid');
     }
+
+    closeBtn.addEventListener("click", () => {
+        toast.style.display = 'none';
+     })
 
     setTimeout(() => {
         toast.remove(); 
